@@ -12,10 +12,8 @@ git pull
 It will helpfully re-use any existing ssh-agent processes, so you dont need to worry about spawning too many. It will only ever spawn a new ssh-agent process if needed.
 
 This script can be called in one of two ways:
-
-`export SSH_AUTH_SOCK="$(sagent)"`
-
-`source /path/to/sagent`
+ - `export SSH_AUTH_SOCK="$(sagent)"`
+ - `source /path/to/sagent`
 
 
 Best is to put it in your bash profile so that an agent will always be ready to go when you need it
