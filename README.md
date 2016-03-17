@@ -1,7 +1,7 @@
 # sagent
 Generate a re-usable ssh-agent for ssh key forwarding
 
-The classic use-case is to do git pull on a remote server without sending your ssh keys
+The classic use-case is to do git pull on a remote server without copying your ssh keys to the remote server's disk.
 
 ```bash
 export SSH_AUTH_SOCK="$(sagent)"
