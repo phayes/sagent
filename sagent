@@ -1,3 +1,16 @@
+# This is a small script to generate a reusable ssh-agent for use with ssh key forwarding
+# The classic use-case is to do git pull on a remote server without sending your ssh keys
+# export SSH_AUTH_SOCK="$(sagent)"
+# ssh -A remoteserver.com
+# git pull
+# 
+# It will helpfully re-use any existing ssh-agent processes, so you dont need to worry about spawning
+# too many. It will only ever spawn a new ssh-agent process if needed.
+# 
+# This script can be called in one of two ways:
+# 1. export SSH_AUTH_SOCK="$(sagent)"
+# 2. source /path/to/sagent
+
 function sshagent_findsockets {
     find /tmp -uid $(id -u) -type s -name agent.\* 2>/dev/null
 }
